@@ -1,5 +1,5 @@
 #include <vector>
 
 namespace Statistics {
-    float ComputeStatistics(const std::vector<___>& );
+    float ComputeStatistics(const std::vector<float>& );
 }
