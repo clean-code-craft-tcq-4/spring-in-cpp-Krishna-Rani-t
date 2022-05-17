@@ -16,7 +16,7 @@ void Statistics::ComputeStatistics(const std::vector<float>& v) {
 	            max = i;
 	        }
 		sum = sum + i;
-		num_elem = num + 1;
+		num_elem = num_elem + 1;
 	    }
 	    average = sum/num_elem;
 }
