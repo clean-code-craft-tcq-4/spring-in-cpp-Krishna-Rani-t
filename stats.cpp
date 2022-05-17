@@ -3,7 +3,8 @@
 
 void Statistics::ComputeStatistics(const std::vector<float>& v) {
     //Implement statistics here
-	average = accumulate( v.begin(), v.end(), 0.0/ v.size());
+	//average = accumulate( v.begin(), v.end(), 0.0/ v.size());
+	 int sum = 0, num_elem =0;
 	 int min = INT_MAX, max = INT_MIN;
 	    for (int i: v)
 	    {
@@ -14,5 +15,8 @@ void Statistics::ComputeStatistics(const std::vector<float>& v) {
 	        if (i > max) {
 	            max = i;
 	        }
+		sum = sum + i;
+		num_elem = num + 1;
 	    }
-
+	    average = sum/num_elem;
+}
