@@ -26,18 +26,18 @@ class LEDAlert:public IAlerter
 class StatsAlerter
 {
   std::vector<IAlerter*> m_Alerter;
-  float m_MaxThreshold;
+  const float m_MaxThreshold;
 public:
-    StartAlerter(float maxThreshold,std::vector<IAlerter*> alerter):m_MaxThreshold(maxThreshold),m_Alerter(alerter)
+    StartAlerter(const float maxThreshold,std::vector<IAlerter*> alerter):m_MaxThreshold(maxThreshold),m_Alerter(alerter)
     {
     }
     void checkAndAlert(std::vector<float> inputData)
     {
         for(auto data:inputData)
         {
-            if(data > maxThreshold)
+            if(data > m_MaxThreshold)
             {
-                if(!m_Alerter.empty()
+                if(!m_Alerter.empty())
                 {
                     m_Alerter[0]->emailSent += true;
                     m_Alerter[1]->ledGlows += true;
