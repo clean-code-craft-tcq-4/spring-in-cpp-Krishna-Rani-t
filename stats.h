@@ -9,34 +9,34 @@ public:
 };
 
 class IAlerter
-{
-  protected:
+{  
+  public:
     bool emailSent;
     bool ledGlows;
-};
-
-class EmailAlert:public IAlerter
-{
-   public:
-       void setEmailSent(bool flag)
+    void setEmailSent(bool flag)
        {
              emailSent += flag;
         }
-};
-
-class LEDAlert:public IAlerter
-{
-       public:
-       void setLedAlert(bool flag)
+    void setLedAlert(bool flag)
        {
              ledGlows += flag;
         }
 };
 
+class EmailAlert:public IAlerter
+{
+       
+};
+
+class LEDAlert:public IAlerter
+{
+   
+};
+
 class StatsAlerter
 {
-  std::vector<IAlerter*> m_Alerter;
   const float m_MaxThreshold;
+  std::vector<IAlerter*> m_Alerter;
 public:
     StatsAlerter(const float maxThreshold,std::vector<IAlerter*> alerter):m_MaxThreshold(maxThreshold),m_Alerter(alerter)
     {
