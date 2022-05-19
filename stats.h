@@ -17,10 +17,20 @@ class IAlerter
 
 class EmailAlert:public IAlerter
 {
+   public:
+       void setEmailSent(bool flag)
+       {
+             emailSent += flag;
+        }
 };
 
 class LEDAlert:public IAlerter
 {
+       public:
+       void setLedAlert(bool flag)
+       {
+             ledGlows += flag;
+        }
 };
 
 class StatsAlerter
@@ -28,7 +38,7 @@ class StatsAlerter
   std::vector<IAlerter*> m_Alerter;
   const float m_MaxThreshold;
 public:
-    StartAlerter(const float maxThreshold,std::vector<IAlerter*> alerter):m_MaxThreshold(maxThreshold),m_Alerter(alerter)
+    StatsAlerter(const float maxThreshold,std::vector<IAlerter*> alerter):m_MaxThreshold(maxThreshold),m_Alerter(alerter)
     {
     }
     void checkAndAlert(std::vector<float> inputData)
@@ -39,8 +49,16 @@ public:
             {
                 if(!m_Alerter.empty())
                 {
-                    m_Alerter[0]->emailSent += true;
-                    m_Alerter[1]->ledGlows += true;
+                    m_Alerter[0]->setEmailSent(true);
+                    m_Alerter[1]->setLedAlert(true);
+                }
+            }
+            else
+            {
+                if(!m_Alerter.empty())
+                {
+                    m_Alerter[0]->setEmailSent(false);
+                    m_Alerter[1]->setLedAlert(false);
                 }
             }
         }
