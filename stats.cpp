@@ -1,7 +1,7 @@
 #include "stats.h"
 #include <climits> 
 
-float Statistics::ComputeStatistics(const std::vector<float>& v) {
+void Statistics::ComputeStatistics(const std::vector<float>& v) {
 	Statistics stats;
     //Implement statistics here
 	  float sum = 0.0;
@@ -24,5 +24,5 @@ float Statistics::ComputeStatistics(const std::vector<float>& v) {
 		    num = num + 1;
 	    }
 	     stats.average = sum / num;
-	return 0;
+	
 }
