@@ -3,9 +3,9 @@
 
 void Statistics::ComputeStatistics(const std::vector<float>& v) {
     //Implement statistics here
-	 int sum = 0;
-	int average = 0;
-	 int min = INT_MAX, max = INT_MIN;
+	 float sum = 0.0;
+	float average = 0.0;
+	 float min = INT_MAX, max = INT_MIN;
 	    for (int i: v)
 	    {
 	        if (i < min) {
