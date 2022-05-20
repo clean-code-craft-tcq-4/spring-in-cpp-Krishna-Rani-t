@@ -1,7 +1,7 @@
 #include "stats.h"
 #include <climits> 
 
-int Statistics::ComputeStatistics(const std::vector<float>& v) {
+float Statistics::ComputeStatistics(const std::vector<float>& v) {
 	Statistics stats;
     //Implement statistics here
 	  float sum = 0.0;
