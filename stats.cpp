@@ -1,7 +1,7 @@
 #include "stats.h"
 #include <climits> 
 
-void Statistics::ComputeStatistics(const std::vector<float>& v) {
+int Statistics::ComputeStatistics(const std::vector<float>& v) {
     //Implement statistics here
 	  float sum = 0.0;
 	  min = INT_MAX, max = INT_MIN;
@@ -17,4 +17,5 @@ void Statistics::ComputeStatistics(const std::vector<float>& v) {
 		sum = sum + i;
 	    }
 	     average = sum/v.size();
+	return min, max, average;
 }
