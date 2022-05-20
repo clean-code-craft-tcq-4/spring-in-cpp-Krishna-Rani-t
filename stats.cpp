@@ -1,6 +1,5 @@
 #include "stats.h"
 #include <climits> 
-#include <numeric>
 
 int Statistics::ComputeStatistics(const std::vector<float>& v) {
 	Statistics stats;
@@ -17,8 +16,11 @@ int Statistics::ComputeStatistics(const std::vector<float>& v) {
 	        if (i > stats.max) {
 	            stats.max = i;
 	        }
-		sum = sum + i;
 	    }
-	     stats.average = std::accumulate(v.begin(), v.end(), 0.0) / v.size();
+	    for (int j: v)
+	    {
+		    sum = sum + j ;
+	    }
+	     stats.average = sum / v.size();
 	return 0;
 }
