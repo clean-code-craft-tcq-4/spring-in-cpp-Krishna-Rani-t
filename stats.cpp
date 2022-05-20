@@ -3,7 +3,7 @@
 
 void Statistics::ComputeStatistics(const std::vector<float>& v) {
     //Implement statistics here
-	  sum = 0.0;
+	  float sum = 0.0;
 	  min = INT_MAX, max = INT_MIN;
 	    for (int i: v)
 	    {
