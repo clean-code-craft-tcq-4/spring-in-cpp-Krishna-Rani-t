@@ -2,20 +2,19 @@
 #include <climits> 
 
 void Statistics::ComputeStatistics(const std::vector<float>& v) {
-	Statistics stats;
     //Implement statistics here
 	  float sum = 0.0;
 	float num = 0;
-	  stats.min = 10000.0;
-	  stats.max = 0.0;
+	  min = 10000.0;
+	max = 0.0;
 	    for (float i: v)
 	    {
-	        if (i < stats.min) {
-	            stats.min = i;
+	        if (i < min) {
+	            min = i;
 	        }
 
-	        if (i > stats.max) {
-	            stats.max = i;
+	        if (i > max) {
+	            max = i;
 	        }
 	    }
 	    for (float j: v)
@@ -23,6 +22,6 @@ void Statistics::ComputeStatistics(const std::vector<float>& v) {
 		    sum = sum + j ;
 		    num = num + 1;
 	    }
-	     stats.average = sum / num;
+	     average = sum / num;
 	
 }
