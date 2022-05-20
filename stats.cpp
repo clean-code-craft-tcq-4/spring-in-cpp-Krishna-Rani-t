@@ -5,6 +5,7 @@ int Statistics::ComputeStatistics(const std::vector<float>& v) {
 	Statistics stats;
     //Implement statistics here
 	  float sum = 0.0;
+	int num = 0;
 	  stats.min = INT_MAX;
 	  stats.max = INT_MIN;
 	    for (int i: v)
@@ -20,7 +21,8 @@ int Statistics::ComputeStatistics(const std::vector<float>& v) {
 	    for (int j: v)
 	    {
 		    sum = sum + j ;
+		    num = num + 1;
 	    }
-	     stats.average = sum / v.size();
+	     stats.average = sum / num;
 	return 0;
 }
