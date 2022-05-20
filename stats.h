@@ -2,9 +2,9 @@
 
 class Statistics {
 public:
-       static float average;
-       static float min;
-       static float max ;  
+        float average;
+        float min;
+        float max ;  
        int ComputeStatistics(const std::vector<float>& v );
 };
 
