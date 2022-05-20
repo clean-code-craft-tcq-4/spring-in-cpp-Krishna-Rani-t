@@ -19,6 +19,6 @@ int Statistics::ComputeStatistics(const std::vector<float>& v) {
 	        }
 		sum = sum + i;
 	    }
-	     stats.average = std::accumulate(v.begin(), v.end(), 0.0) / v.size()
+	     stats.average = std::accumulate(v.begin(), v.end(), 0.0) / v.size();
 	return 0;
 }
