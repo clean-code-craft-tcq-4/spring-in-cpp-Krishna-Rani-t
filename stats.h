@@ -5,7 +5,7 @@ public:
         float average;
         float min;
         float max ;  
-       int ComputeStatistics(const std::vector<float>& v );
+       float ComputeStatistics(const std::vector<float>& v );
 };
 
 
