@@ -5,10 +5,10 @@ int Statistics::ComputeStatistics(const std::vector<float>& v) {
 	Statistics stats;
     //Implement statistics here
 	  float sum = 0.0;
-	int num = 0;
-	  stats.min = INT_MAX;
-	  stats.max = INT_MIN;
-	    for (int i: v)
+	float num = 0;
+	  stats.min = 10000.0;
+	  stats.max = 0.0;
+	    for (float i: v)
 	    {
 	        if (i < stats.min) {
 	            stats.min = i;
@@ -18,7 +18,7 @@ int Statistics::ComputeStatistics(const std::vector<float>& v) {
 	            stats.max = i;
 	        }
 	    }
-	    for (int j: v)
+	    for (float j: v)
 	    {
 		    sum = sum + j ;
 		    num = num + 1;
